@@ -1,0 +1,14 @@
+<section *ngIf="isLoading && !errorMessage">
+    Carregando os dados...
+</section>
+
+<h2>Dados brutos</h2>
+<ul>
+    <li *ngFor="let dado of dados">
+        <label>{{dado.estado_ibge}}</label> : {{dado.ano}} : {{dado.valor}}
+    </li>
+</ul>
+
+<section *ngIf="errorMessage">
+    {{errorMessage}}
+</section>
