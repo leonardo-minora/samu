@@ -10,14 +10,14 @@ import {DadoBruto} from '../types/dado-bruto';
 
 @Injectable()
 export class DadosBrutoService {
-    private baseUrl: string = 'https://crossorigin.me/http://api.pgi.gov.br/api';
+    private baseUrl: string = 'https://samu.restlet.net/v1/valores';
 
     constructor(private http : Http) { }
 
     getAll(): Observable<DadoBruto[]>{
         let dados = this.http
             .get(
-                `${this.baseUrl}/1/serie/27.json`,
+                `${this.baseUrl}/samu.json`,
                 { headers: this.getHeaders() })
             .map(this.handleMap)
             .catch(this.handleError);
